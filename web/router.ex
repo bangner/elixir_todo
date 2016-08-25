@@ -20,6 +20,7 @@ defmodule Todo.Router do
     get "/", PageController, :index
 
     get "/task/new", TaskController, :new
+    get "/tasks", TaskController, :index
     post "/task", TaskController, :create
   end
 
