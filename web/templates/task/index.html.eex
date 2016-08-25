@@ -1,0 +1,7 @@
+<h2>List of all tasks</h2>
+
+<ol>
+  <%= for task <- @tasks do %>
+    <li><%= task.title %></li>
+  <% end %>
+</ol>

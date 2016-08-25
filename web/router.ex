@@ -5,8 +5,7 @@ defmodule Todo.Router do
     plug :accepts, ["html"]
     plug :fetch_session
     plug :fetch_flash
-    # FIXME -
-    # plug :protect_from_forgery
+    plug :protect_from_forgery
     plug :put_secure_browser_headers
   end
 
@@ -15,17 +14,11 @@ defmodule Todo.Router do
   end
 
   scope "/", Todo do
-    pipe_through :browser # Use the default browser stack
+    pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", TaskController, :index
 
-    get "/task/new", TaskController, :new
-    get "/tasks", TaskController, :index
-    post "/task", TaskController, :create
+    resources "/task", TaskController
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", Todo do
-  #   pipe_through :api
-  # end
 end

@@ -3,6 +3,6 @@ defmodule Todo.PageController do
 
   def index(conn, _params) do
     text conn, "Hello Phoenix"
-    # render conn, "index.html"
+    #render conn, "index.html"
   end
 end

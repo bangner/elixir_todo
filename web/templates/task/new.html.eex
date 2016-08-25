@@ -1,0 +1,4 @@
+<%= form_for @conn, "/task", [as: :task], fn(f)->%>
+<%= text_input f, :title, placeholder: "Enter your task info..."  %>
+<input type=submit value=Save />
+<% end %>
